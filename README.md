@@ -1,2 +1,2 @@
-# rsg
-procedural rpg using python/kivy
+# praxis
+praxis
