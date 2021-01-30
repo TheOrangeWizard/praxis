@@ -117,11 +117,22 @@ class GameScreen:
         self.praxis = praxis
         self.title = Label(text=self.praxis.world.player.name)
         self.menu = Button(text="menu", command=lambda: self.praxis.change_screen(MainScreen))
+        self.locationsDisplay = Listbox()
+        self.locationIndex = 0
+        for location in self.praxis.world.locations:
+            self.locationsDisplay.insert(self.locationIndex, self.praxis.world.locations[location].type)
+            self.locationIndex += 1
+        self.characterDisplay = Listbox()
+
+    def update_character_display(self, location):
+        pass
 
     def draw(self):
         self.title.pack(side="top")
         self.menu.pack(side="bottom")
+        self.locationsDisplay.pack(side="left")
 
     def clear(self):
         self.title.destroy()
         self.menu.destroy()
+        self.locationsDisplay.destroy()

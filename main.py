@@ -32,6 +32,7 @@ class Praxis(Frame):
             self.world.player = Character()
             self.world.name = worldname
             self.world.player.name = playername
+            self.world.generate_locations(int(self.screen.worldSizeEntry.get()))
             self.change_screen(GameScreen)
         else:
             tkinter.messagebox.showerror("begin new ga,e", "character and world names cannot be empty")
