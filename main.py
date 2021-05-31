@@ -1,8 +1,8 @@
 # praxis main.py
 
 
-from tkinter import *
-from tkinter.ttk import *
+# from tkinter import *
+# from tkinter.ttk import *
 import tkinter.messagebox
 from screens import *
 from world import *
@@ -23,19 +23,6 @@ class Praxis(Frame):
         self.screen.clear()
         self.screen = new_screen(self)
         self.screen.draw()
-
-    def begin_new_game(self):
-        worldname = self.screen.worldNameEntry.get()
-        playername = self.screen.charNameEntry.get()
-        if len(worldname) > 0 and len(playername) > 0:
-            self.world = World()
-            self.world.player = Character()
-            self.world.name = worldname
-            self.world.player.name = playername
-            self.world.generate_locations(int(self.screen.worldSizeEntry.get()))
-            self.change_screen(GameScreen)
-        else:
-            tkinter.messagebox.showerror("begin new ga,e", "character and world names cannot be empty")
 
 
 root = Tk()

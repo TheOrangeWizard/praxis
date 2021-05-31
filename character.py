@@ -3,6 +3,8 @@
 
 class Character:
     def __init__(self):
+        self.id = None
+        self.location = None
         self.name = "default"
         self.health = 100
         self.maxHealth = 100
